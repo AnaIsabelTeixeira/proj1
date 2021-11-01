@@ -1,0 +1,45 @@
+/*WD2_2021
+ANA ISABEL TEIXEIRA
+PROJ_0#*/
+
+@font-face {
+  font-family: 'League Mono';
+  src: url("LeagueMonoVariable.woff2")
+    format("woff2-variations");
+	font-weight: 100 800;
+	font-stretch: 50% 200%;
+	font-style: normal;
+}
+
+.word {
+/*  animation: 2s enter;
+	opacity: 0;
+  background-color: #F2326E;
+  border-radius: 100%;*/
+	--weight: 100;
+	--stretch: 58;
+	font-variation-settings: 'wght' var(--weight), 'wdth' var(--stretch);
+	font-family: 'League Mono'; 
+	font-weight: 100;
+	font-stretch: 58%;
+	font-size: 20px;
+
+	height: 50px;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 50px;
+}
+
+@keyframes enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translate(-100%, -100%);
+  }
+  
+  50% {
+    opacity: .5;
+  }
+}
+
