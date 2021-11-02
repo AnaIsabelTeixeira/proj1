@@ -2,8 +2,6 @@
 //ANA ISABEL TEIXEIRA
 //PROJ_01
 
-//I start by creating different arrays of words (nouns, verbs, adjectives, adverbs, proposition). randGen() and sentence() then perform several mathematical tasks for generating a random index value within the total amount of values in each array. The sentence() function then takes these index values and returns their results within a structure. The return statement is there so the result is usable outside the function once you declare it as a variable which calls sentence() back. 
-
 let run = true;
 
 document.addEventListener("click", function runTrail(){
@@ -60,8 +58,6 @@ let maxSpeed = 0,
 	maxPositiveAcc = 0,
 	maxNegativeAcc = 0;
 
-// In wordTrail(), use an if statement in order to initialize addWord() every time the interval we set previously has elapsed, as long as the maxWords limit hasn't been reached.
-
 document.addEventListener("mousemove",
 
 	function wordTrail(event) {
@@ -72,8 +68,6 @@ document.addEventListener("mousemove",
 			addWord();
 		}
 	});
-
-// WordSpeed() takes account of the speed by returning the horizontal and verical coordinates of the  mouse pointer's position relative to the screen every time the function is triggered (due to the setInterval method, which is set to call wordSpeed() every 100 miliseconds) and compares them to their previous recorded positions. The speed and accelaration are then turned into percentages (according to their maximum and minimum values), and newWeight and newStretch are calculated by applying the same percentage value to the font's weight (100-800) and width (50-200) values. These values were declared outside the function, and so they're globally available.
 
 setInterval(wordSpeed, 100)
 
@@ -106,8 +100,6 @@ function wordSpeed() {
 	newWeight = Math.round(percentSpeed * (maxWeightValue - minWeightValue) / 100 + minWeightValue);
 	newStretch = Math.round(percentAcc * (maxStretchValue - minStretchValue) / 100 + minStretchValue);
 };
-
-// After splitting the sentence() (so it's split back into an array of substrings which can be called one at a time), addWord() will use the cloneNode() method to copy the word container node and return a new clone every time the function is called (it's called every time worldTrail() runs). Inside addWord(), we set the clone's style properties (which is where we set the newWeight and newStretch values, calculated above, to create a variation of weights and widths in the words according to the user's mouse movements), as well as their textContent (calling the previously split sentence() string, and iterating through its index value every time addWord() is run by adding index++ so it will show one word of the string at a time) and location (in this case, its X and Y valuess will follow the mouse pointer's movements).
 
 let index = 0;
 let string = content.split(" ");
